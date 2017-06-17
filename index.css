@@ -42,4 +42,15 @@ div.coin-area:last-child {
 h3 {
 	text-align: center;
 	margin-top: 2px;
+	margin-bottom: 0px;
+	font-family: "Avenir Next";
+}
+
+table {
+	width: 100%;
+}
+
+div.table {
+	margin-top: 5px;
+	height: 70%;
 }
