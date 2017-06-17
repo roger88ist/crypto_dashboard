@@ -21,6 +21,7 @@ body {
 .left {
 	display: flex;
 	flex-direction: column;
+	border-right: 2px dotted #DAE1E9;
 }
 
 .right {
@@ -30,6 +31,7 @@ body {
 .coin-area {
 	height: 33%;
 	width: 100%;
+	border-bottom: 1px solid #DAE1E9;
 }
 
 div.coin-area:last-child {
@@ -39,4 +41,5 @@ div.coin-area:last-child {
 
 h3 {
 	text-align: center;
+	margin-top: 2px;
 }
