@@ -1,0 +1,37 @@
+body {
+	background-color: #00007F;
+}
+
+.container {
+	width: 70%;
+	height: 500px;
+	margin: auto;
+	background-color: white;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+}
+
+.left, .right {
+	height: 100%;
+	width: 50%;
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+}
+
+.right {
+	
+}
+
+.coin-area {
+	height: 33%;
+	width: 100%;
+}
+
+div.coin-area:last-child {
+	height: 34%;
+	width: 100%;
+}
