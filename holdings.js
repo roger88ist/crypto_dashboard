@@ -8,15 +8,21 @@ function investmentObject(name, initialInvestment, totalCoins) {
 }
 
 function litecoinData() {
-	return investmentObject('ltc', 445.72, 15);
+	var investmentAmount = // Enter Total Purchase Amount
+	var totalCoins = // Enter Total Coins Purchased
+	return investmentObject('ltc', investmentAmount, totalCoins);
 }
 
 function bitcoinData() {
-	return investmentObject('btc', 1014.90, 0.51);	
+	var investmentAmount = // Enter Total Purchase Amount
+	var totalCoins = // Enter Total Coins Purchased
+	return investmentObject('btc', investmentAmount, totalCoins);
 }
 
 function ethereumData() {
-	return investmentObject('eth', 268.76, 1);	
+	var investmentAmount = // Enter Total Purchase Amount
+	var totalCoins = // Enter Total Coins Purchased
+	return investmentObject('eth', investmentAmount, totalCoins);
 }
 
 function round(value, decimals) {
