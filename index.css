@@ -59,3 +59,13 @@ div.table {
 td {
 	text-align: center;
 }
+
+td.price {
+	border-left: 1px solid #DAE1E9;
+	border-right: 1px solid #DAE1E9;
+}
+
+div.split {
+	height: 50%;
+	width: 100%;
+}
