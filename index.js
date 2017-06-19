@@ -22,22 +22,31 @@ $(document).ready(function(){
 				insertProfit(litecoinData(), currentPrices);
 				insertProfit(bitcoinData(), currentPrices);
 				insertProfit(ethereumData(), currentPrices);
+
+				insertTotalGains(totalGains(currentPrices));
+
+				var portfolioValue = portfolioTotal(currentPrices);
+				insertPortfolioTotal(portfolioValue);
+
+				var initialInvestment = totalInvestment();
+				var percent = (calculatePercent(portfolioValue, initialInvestment)).toFixed(2);
+				insertTotalPercentage(percent);
 			}
 		});
 	});
 });
 
-
-
 function populateFields() {
 	var ltc = litecoinData();
 	var eth = ethereumData();
 	var btc = bitcoinData();
+	var total = totalInvestment();
 
 
 	insertValues(ltc);
 	insertValues(eth);
 	insertValues(btc);
+	$('#initial-investment').text(totalInvestment);
 }	
 
 function insertValues(coinObject) {
@@ -66,6 +75,18 @@ function insertProfit(coinObject, currentPrices) {
 	$(signPercentLocation).text(sign);
 	$(moneyLocation).text(change.money);
 	$(percentLocation).text(change.percent);
+}
+
+function insertTotalGains(totalGain) {
+	$('#total-gains').text(totalGain);
+}
+
+function insertPortfolioTotal(portfolioTotal) {
+	$('#portfolio-total').text(portfolioTotal);
+}
+
+function insertTotalPercentage(totalPercent) {
+	$('#total-percent').text(totalPercent);
 }
 
 function calculateProfits(coinObject, currentPrices) {

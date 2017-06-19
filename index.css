@@ -1,5 +1,6 @@
 body {
 	background-color: #00007F;
+	font-family: "Avenir Next";
 }
 
 .container {
@@ -43,7 +44,6 @@ h3 {
 	text-align: center;
 	margin-top: 2px;
 	margin-bottom: 0px;
-	font-family: "Avenir Next";
 }
 
 table {
@@ -56,8 +56,13 @@ div.table {
 	height: 70%;
 }
 
+th {
+	font-weight: normal;
+}
+
 td {
 	text-align: center;
+	width: 33%;
 }
 
 td.price {
@@ -77,19 +82,20 @@ button {
 	height: 50px;
 }
 
-span {
-	font-weight: normal;
+.right div {
+	width: 80%;
+	margin: auto;
+	height: 25%;
+	text-align: center;
 }
 
-.cursive{
-	font-family: cursive;
-	font-size: larger;
+.right div:nth-child(2) {
+	border-bottom: 1px solid black;
 }
 
 .sign {
 	font-size: 20px;
 	font-weight: bolder;
-	font-family: sans-serif;
 }
 
 .green {
