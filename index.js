@@ -1,6 +1,34 @@
 $(document).ready(function(){
 	populateFields();
 	populateProfits();
+
+	$('#click').click(function(){
+		var url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,LTC,BTC&tsyms=USD';
+		var usd = 'USD';
+		jQuery.ajax({
+			type: 'GET',
+			url: url,
+			dataType: 'json',
+			contentType: 'application/json',
+			success: function(json) {
+				var ltc = '$' + json['LTC'][usd];
+				var btc = '$' + json['BTC'][usd];
+				var eth = '$' + json['ETH'][usd];
+				$('#ltc-current-price').text(ltc);
+				$('#btc-current-price').text(btc);
+				$('#eth-current-price').text(eth);
+			}
+		});
+	});
+
+	function ApiCall(area, url) {
+  jQuery.ajax({
+    
+    success: function(json) {
+      appendResultsToArea(json, area);
+    }
+  });
+}
 });
 
 
