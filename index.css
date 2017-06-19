@@ -68,6 +68,7 @@ td.price {
 div.split {
 	height: 50%;
 	width: 100%;
+	padding-top: 10px;
 }
 
 button {
@@ -78,4 +79,27 @@ button {
 
 span {
 	font-weight: normal;
+}
+
+.cursive{
+	font-family: cursive;
+	font-size: larger;
+}
+
+.sign {
+	font-size: 20px;
+	font-weight: bolder;
+	font-family: sans-serif;
+}
+
+.green {
+	color: #006600;
+}
+
+.red {
+
+}
+
+.grey {
+	
 }

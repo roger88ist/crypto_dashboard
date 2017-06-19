@@ -84,7 +84,7 @@ function calculatePercent(cp, pp) {
 	} else {
 		return ((cp / pp) - 1) * 100;
 	}
-}
+}	
 
 function getSign(value) {
 	if (value < 0 ) {
