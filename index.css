@@ -9,7 +9,7 @@ body {
 	margin: auto;
 	margin-top: 100px;
 	background-color: white;
-	border-radius: 5px;
+	border-radius: 50px;
 	display: flex;
 	flex-direction: row;
 }
@@ -29,10 +29,14 @@ body {
 	
 }
 
+.coin-area:nth-child(2) {
+	border-top: 1px solid #DAE1E9;
+	border-bottom: 1px solid #DAE1E9;
+}
+
 .coin-area {
 	height: 33%;
 	width: 100%;
-	border-bottom: 1px solid #DAE1E9;
 }
 
 div.coin-area:last-child {
