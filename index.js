@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	populateFields();
-	populateProfits();
 
 	$('#click').click(function(){
 		var url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,LTC,BTC&tsyms=USD';
@@ -39,17 +38,7 @@ function populateFields() {
 	insertValues(ltc);
 	insertValues(eth);
 	insertValues(btc);
-}
-
-function populateProfits() {
-	var ltc = litecoinData();
-	var eth = ethereumData();
-	var btc = bitcoinData();	
-
-	insertProfit(ltc, currentPrices());
-	insertProfit(eth, currentPrices());
-	insertProfit(btc, currentPrices());
-}
+}	
 
 function insertValues(coinObject) {
 	var table = 'table#' + coinObject.name;
@@ -62,13 +51,19 @@ function insertValues(coinObject) {
 
 function insertProfit(coinObject, currentPrices) {
 	var table = 'table#' + coinObject.name;
-	var moneyLocation = $(table + ' div.split')[0];
-	var percentLocation = $(table + ' div.split')[1];
+	var moneyDiv = $(table + ' div.split')[0];
+	var percentDiv = $(table + ' div.split')[1];
 
 
 	var change = calculateProfits(coinObject, currentPrices);
+	var sign = getSign(change.money);
+	var signMoneyLocation = $(moneyDiv).find('.sign')[0];
+	var signPercentLocation = $(percentDiv).find('.sign')[0];
+	var moneyLocation = $(moneyDiv).find('.money')[0];
+	var percentLocation = $(percentDiv).find('.percent')[0];
 
-
+	$(signMoneyLocation).text(sign);
+	$(signPercentLocation).text(sign);
 	$(moneyLocation).text(change.money);
 	$(percentLocation).text(change.percent);
 }
@@ -91,10 +86,12 @@ function calculatePercent(cp, pp) {
 	}
 }
 
-function currentPrices() {
-	return {
-		ltc: 10,
-		eth: 300,
-		btc: 2500
+function getSign(value) {
+	if (value < 0 ) {
+		return '-';
+	} else if (value > 0 ) {
+		return '+';
+	} else {
+		return '';
 	}
 }
