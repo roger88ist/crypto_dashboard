@@ -11,24 +11,21 @@ $(document).ready(function(){
 			dataType: 'json',
 			contentType: 'application/json',
 			success: function(json) {
-				var ltc = '$' + json['LTC'][usd];
-				var btc = '$' + json['BTC'][usd];
-				var eth = '$' + json['ETH'][usd];
-				$('#ltc-current-price').text(ltc);
-				$('#btc-current-price').text(btc);
-				$('#eth-current-price').text(eth);
+				var currentPrices = { 
+					ltc: parseFloat(json['LTC'][usd]),
+					btc: parseFloat(json['BTC'][usd]),
+					eth: parseFloat(json['ETH'][usd]) 
+				}
+				$('#ltc-current-price').text('$' + currentPrices.ltc);
+				$('#btc-current-price').text('$' + currentPrices.btc);
+				$('#eth-current-price').text('$' + currentPrices.eth);
+
+				insertProfit(litecoinData(), currentPrices);
+				insertProfit(bitcoinData(), currentPrices);
+				insertProfit(ethereumData(), currentPrices);
 			}
 		});
 	});
-
-	function ApiCall(area, url) {
-  jQuery.ajax({
-    
-    success: function(json) {
-      appendResultsToArea(json, area);
-    }
-  });
-}
 });
 
 
@@ -49,9 +46,9 @@ function populateProfits() {
 	var eth = ethereumData();
 	var btc = bitcoinData();	
 
-	insertProfit(ltc);
-	insertProfit(eth);
-	insertProfit(btc);
+	insertProfit(ltc, currentPrices());
+	insertProfit(eth, currentPrices());
+	insertProfit(btc, currentPrices());
 }
 
 function insertValues(coinObject) {
@@ -63,21 +60,21 @@ function insertValues(coinObject) {
 	$(priceLocation).text(coinObject.pricePerCoin);
 }
 
-function insertProfit(coinObject) {
+function insertProfit(coinObject, currentPrices) {
 	var table = 'table#' + coinObject.name;
 	var moneyLocation = $(table + ' div.split')[0];
 	var percentLocation = $(table + ' div.split')[1];
 
 
-	var change = calculateProfits(coinObject);
+	var change = calculateProfits(coinObject, currentPrices);
 
 
 	$(moneyLocation).text(change.money);
 	$(percentLocation).text(change.percent);
 }
 
-function calculateProfits(coinObject) {
-	var currentPrice = currentPrices()[coinObject.name];
+function calculateProfits(coinObject, currentPrices) {
+	var currentPrice = currentPrices[coinObject.name];
 	var purchasedPrice = coinObject.pricePerCoin;
 
 	return {
