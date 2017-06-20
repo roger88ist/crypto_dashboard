@@ -28,7 +28,7 @@ $(document).ready(function(){
 				var portfolioValue = portfolioTotal(currentPrices);
 				insertPortfolioTotal(portfolioValue);
 
-				var initialInvestment = totalInvestment();
+				var initialInvestment = totalOutOfPocket();
 				var percent = (calculatePercent(portfolioValue, initialInvestment)).toFixed(2);
 				insertTotalPercentage(percent);
 			}
@@ -40,13 +40,13 @@ function populateFields() {
 	var ltc = litecoinData();
 	var eth = ethereumData();
 	var btc = bitcoinData();
-	var total = totalInvestment();
+	var total = totalOutOfPocket();
 
 
 	insertValues(ltc);
 	insertValues(eth);
 	insertValues(btc);
-	$('#initial-investment').text(totalInvestment);
+	$('#initial-investment').text(total);
 }	
 
 function insertValues(coinObject) {

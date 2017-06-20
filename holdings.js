@@ -1,40 +1,44 @@
-function investmentObject(name, initialInvestment, totalCoins) {
+function investmentObject(name, initialInvestment, totalCoins, outOfPocket) {
 	return {
 		name: name,
 		totalDollars: initialInvestment,
 		coins: totalCoins,
-		pricePerCoin: round((initialInvestment / totalCoins), 2)
+		pricePerCoin: round((initialInvestment / totalCoins), 2),
+		outOfPocket: outOfPocket
 	};
 }
 
 function litecoinData() {
-	var investmentAmount = // Enter Total Purchase Amount
-	var totalCoins = // Enter Total Coins Purchased
-	return investmentObject('ltc', investmentAmount, totalCoins);
+	var investmentAmount = 893.39;
+	var totalCoins = 25;
+	var outOfPocket = 893.39;
+	return investmentObject('ltc', investmentAmount, totalCoins, outOfPocket);
 }
 
 function bitcoinData() {
-	var investmentAmount = // Enter Total Purchase Amount
-	var totalCoins = // Enter Total Coins Purchased
-	return investmentObject('btc', investmentAmount, totalCoins);
+	var investmentAmount = 1014.90;
+	var totalCoins = 0.51;
+	var outOfPocket = 1014.90;
+	return investmentObject('btc', investmentAmount, totalCoins, outOfPocket);
 }
 
 function ethereumData() {
-	var investmentAmount = // Enter Total Purchase Amount
-	var totalCoins = // Enter Total Coins Purchased
-	return investmentObject('eth', investmentAmount, totalCoins);
+	var investmentAmount = 269.76;
+	var totalCoins = 1;
+	var outOfPocket = 269.76;
+	return investmentObject('eth', investmentAmount, totalCoins, outOfPocket);
 }
 
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 
-function totalInvestment() {
+function totalOutOfPocket() {
 	var total = 0;
 	var coins =  allCoins();
 
 	for (i = 0; i < coins.length; i++) {
-		total += coins[i].totalDollars;
+		total += coins[i].outOfPocket;
 	}
 	return total;
 }
