@@ -50,7 +50,7 @@ function totalGains(currentPrices) {
 		var coin = coins[i];
 		var coinAmount = coin.coins;
 		var currrentTotal = currentPrices[coin.name] * coinAmount;
-		gains += (currrentTotal - coin.totalDollars);
+		gains += (currrentTotal - coin.outOfPocket);
 	}
 	return gains.toFixed(2);
 }
