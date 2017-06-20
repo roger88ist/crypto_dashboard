@@ -28,3 +28,39 @@ function ethereumData() {
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
+
+function totalInvestment() {
+	var total = 0;
+	var coins =  allCoins();
+
+	for (i = 0; i < coins.length; i++) {
+		total += coins[i].totalDollars;
+	}
+	return total;
+}
+
+function totalGains(currentPrices) {
+	var gains = 0;
+	var coins =  allCoins();
+	for (i = 0; i < coins.length; i++) {
+		var coin = coins[i];
+		var coinAmount = coin.coins;
+		var currrentTotal = currentPrices[coin.name] * coinAmount;
+		gains += (currrentTotal - coin.totalDollars);
+	}
+	return gains.toFixed(2);
+}
+
+function portfolioTotal(currentPrices) {
+	var total = 0;
+	var coins =  allCoins();
+	for (i = 0; i < coins.length; i++) {
+		var coin = coins[i];
+		total += currentPrices[coin.name] * coin.coins
+	}
+	return total.toFixed(2);
+}
+
+function allCoins() {
+	return [litecoinData(), bitcoinData(), ethereumData()];
+}
