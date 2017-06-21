@@ -29,6 +29,13 @@ function ethereumData() {
 	return investmentObject('eth', investmentAmount, totalCoins, outOfPocket);
 }
 
+function rippleData() {
+	var investmentAmount = ;
+	var totalCoins = ;
+	var outOfPocket = ;
+	return investmentObject('eth', investmentAmount, totalCoins, outOfPocket);
+}
+
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
@@ -66,5 +73,5 @@ function portfolioTotal(currentPrices) {
 }
 
 function allCoins() {
-	return [litecoinData(), bitcoinData(), ethereumData()];
+	return [litecoinData(), bitcoinData(), ethereumData(), rippleData()];
 }
