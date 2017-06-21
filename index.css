@@ -5,7 +5,7 @@ body {
 
 .container {
 	width: 70%;
-	height: 500px;
+	height: 680px;
 	margin: auto;
 	margin-top: 100px;
 	background-color: white;
@@ -25,23 +25,15 @@ body {
 	border-right: 2px dotted #DAE1E9;
 }
 
-.right {
-	
-}
-
-.coin-area:nth-child(2) {
-	border-top: 1px solid #DAE1E9;
+.coin-area {
+	height: 25%;
+	width: 100%;
 	border-bottom: 1px solid #DAE1E9;
 }
 
-.coin-area {
-	height: 33%;
-	width: 100%;
-}
-
-div.coin-area:last-child {
-	height: 34%;
-	width: 100%;
+.coin-area:last-child {
+	border-top: 1px solid #DAE1E9;
+	border-bottom: none;
 }
 
 h3 {
