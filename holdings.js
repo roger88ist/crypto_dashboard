@@ -33,7 +33,7 @@ function rippleData() {
 	var investmentAmount = ;
 	var totalCoins = ;
 	var outOfPocket = ;
-	return investmentObject('eth', investmentAmount, totalCoins, outOfPocket);
+	return investmentObject('xrp', investmentAmount, totalCoins, outOfPocket);
 }
 
 function round(value, decimals) {

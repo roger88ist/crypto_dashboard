@@ -2,7 +2,7 @@ $(document).ready(function(){
 	populateFields();
 
 	$('#click').click(function(){
-		var url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,LTC,BTC&tsyms=USD';
+		var url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,LTC,BTC,XRP&tsyms=USD';
 		var usd = 'USD';
 		jQuery.ajax({
 			type: 'GET',
@@ -13,15 +13,18 @@ $(document).ready(function(){
 				var currentPrices = { 
 					ltc: parseFloat(json['LTC'][usd]),
 					btc: parseFloat(json['BTC'][usd]),
-					eth: parseFloat(json['ETH'][usd]) 
+					eth: parseFloat(json['ETH'][usd]),
+					xrp: parseFloat(json['XRP'][usd])
 				}
 				$('#ltc-current-price').text('$' + currentPrices.ltc);
 				$('#btc-current-price').text('$' + currentPrices.btc);
 				$('#eth-current-price').text('$' + currentPrices.eth);
+				$('#xrp-current-price').text('$' + currentPrices.xrp);
 
 				insertProfit(litecoinData(), currentPrices);
 				insertProfit(bitcoinData(), currentPrices);
 				insertProfit(ethereumData(), currentPrices);
+				insertProfit(rippleData(), currentPrices);
 
 				insertTotalGains(totalGains(currentPrices));
 
@@ -40,12 +43,14 @@ function populateFields() {
 	var ltc = litecoinData();
 	var eth = ethereumData();
 	var btc = bitcoinData();
-	var total = totalOutOfPocket();
+	var xrp = rippleData();
+	var total = round(totalOutOfPocket(), 2);
 
 
 	insertValues(ltc);
 	insertValues(eth);
 	insertValues(btc);
+	insertValues(xrp);
 	$('#initial-investment').text(total);
 }	
 
