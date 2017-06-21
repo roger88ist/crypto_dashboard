@@ -70,16 +70,15 @@ function insertProfit(coinObject, currentPrices) {
 
 
 	var change = calculateProfits(coinObject, currentPrices);
-	var sign = getSign(change.money);
 	var signMoneyLocation = $(moneyDiv).find('.sign')[0];
 	var signPercentLocation = $(percentDiv).find('.sign')[0];
 	var moneyLocation = $(moneyDiv).find('.money')[0];
 	var percentLocation = $(percentDiv).find('.percent')[0];
 
-	$(signMoneyLocation).text(sign);
-	$(signPercentLocation).text(sign);
-	$(moneyLocation).text(change.money);
-	$(percentLocation).text(change.percent);
+	$(signMoneyLocation).text(change.sign);
+	$(signPercentLocation).text(change.sign);
+	$(moneyLocation).text(Math.abs(change.money));
+	$(percentLocation).text(Math.abs(change.percent));
 }
 
 function insertTotalGains(totalGain) {
@@ -97,10 +96,12 @@ function insertTotalPercentage(totalPercent) {
 function calculateProfits(coinObject, currentPrices) {
 	var currentPrice = currentPrices[coinObject.name];
 	var purchasedPrice = coinObject.pricePerCoin;
+	var profit = (currentPrice - purchasedPrice).toFixed(2)
 
 	return {
-		money: (currentPrice - purchasedPrice).toFixed(2),
-		percent: calculatePercent(currentPrice, purchasedPrice).toFixed(1)
+		money: profit,
+		percent: calculatePercent(currentPrice, purchasedPrice).toFixed(1),
+		sign: getSign(profit)
 	}
 }
 
