@@ -16,4 +16,11 @@
 
 .calculator-field {
 	width: 30%;
+	margin: auto;
+}
+
+select#coin {
+	width: 100%;
+	margin: auto;
+	height: 30px;
 }
