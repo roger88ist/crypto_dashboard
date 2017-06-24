@@ -111,19 +111,6 @@ button {
 	top: -20px;
 }
 
-.new-price-calculator {
-	height: 50px;
-	margin-top: 20px;
-}
-
-#calculator-fields {
-	background-color: white;
-	height: 100%;
-	width: 70%;
-	border-radius: 10px;
-	margin: auto;
-}
-
 .green {
 	color: #006600;
 }

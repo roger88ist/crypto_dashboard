@@ -1,0 +1,19 @@
+.new-price-calculator {
+	height: 50px;
+	margin-top: 20px;
+}
+
+#calculator-fields {
+	background-color: white;
+	height: 100%;
+	width: 70%;
+	border-radius: 10px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.calculator-field {
+	width: 30%;
+}
