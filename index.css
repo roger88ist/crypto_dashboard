@@ -72,8 +72,11 @@ div.split {
 	padding-top: 10px;
 }
 
+.button {
+	text-align: center;
+}
+
 button {
-	margin: auto;
 	width: 100px;	
 	height: 50px;
 }
