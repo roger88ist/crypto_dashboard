@@ -89,6 +89,11 @@ button {
 	border-bottom: 4px solid black;
 }
 
+#total-percent, #portfolio-total, #initial-investment {
+	position: relative;
+	top: 15px;
+}
+
 .sign {
 	font-size: 20px;
 	font-weight: bolder;
