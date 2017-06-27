@@ -40,24 +40,18 @@ $(document).ready(function(){
 });
 
 function populateFields() {
-	var ltc = litecoinData();
-	var eth = ethereumData();
-	var btc = bitcoinData();
-	var xrp = rippleData();
-	var total = round(totalOutOfPocket(), 2);
 	var coins = allCoins();
-
-
-	insertValues(ltc);
-	insertValues(eth);
-	insertValues(btc);
-	insertValues(xrp);
-	$('#initial-investment').text(total);
-
+	var length = coins.length;
 	var selectField = $('select#coin');
-	$.each(coins, function(){
-		selectField.append($('<option />').val(this.name).text(this.name.toUpperCase()));
-	});
+
+	for (i = 0; i < length; i++) {
+		var coin = coins[i];
+		insertValues(coin);
+		selectField.append($('<option />').val(coin.name).text(coin.name.toUpperCase()));
+	}
+
+	var total = round(totalOutOfPocket(), 2);
+	$('#initial-investment').text(total);
 }	
 
 function insertValues(coinObject) {
