@@ -50,8 +50,7 @@ function populateFields() {
 		selectField.append($('<option />').val(coin.name).text(coin.name.toUpperCase()));
 	}
 
-	var total = round(totalOutOfPocket(), 2);
-	$('#initial-investment').text(total);
+	insertInitialInvestment();
 }	
 
 function insertValues(coinObject) {
@@ -79,6 +78,11 @@ function insertProfit(coinObject, currentPrices) {
 	$(signPercentLocation).text(change.sign);
 	$(moneyLocation).text(Math.abs(change.money));
 	$(percentLocation).text(Math.abs(change.percent));
+}
+
+function insertInitialInvestment() {
+	var total = round(totalOutOfPocket(), 2);
+	$('#initial-investment').text(total);	
 }
 
 function insertTotalGains(totalGain) {
