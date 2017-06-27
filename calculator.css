@@ -6,7 +6,7 @@
 #calculator-fields {
 	background-color: white;
 	height: 100%;
-	width: 70%;
+	width: 50%;
 	border-radius: 10px;
 	margin: auto;
 	display: flex;
@@ -25,4 +25,20 @@ select#coin {
 	height: 30px;
 	font-weight: bold;
 	font-size: 20px;
+}
+
+input#investment-amount {
+	width: 100%;
+	margin: auto;
+	height: 25px;
+	border: 1px solid black;
+	font-weight: bold;
+	border-radius: 5px;
+	font-size: 20px;	
+	text-align: center;
+}
+
+div.new-price {
+	height: 30px;
+	border-left: 3px solid black;
 }
