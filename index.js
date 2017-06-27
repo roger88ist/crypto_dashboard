@@ -45,6 +45,7 @@ function populateFields() {
 	var btc = bitcoinData();
 	var xrp = rippleData();
 	var total = round(totalOutOfPocket(), 2);
+	var coins = allCoins();
 
 
 	insertValues(ltc);
@@ -52,6 +53,11 @@ function populateFields() {
 	insertValues(btc);
 	insertValues(xrp);
 	$('#initial-investment').text(total);
+
+	var selectField = $('select#coin');
+	$.each(coins, function(){
+		selectField.append($('<option />').val(this.name).text(this.name.toUpperCase()));
+	});
 }	
 
 function insertValues(coinObject) {
