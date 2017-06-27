@@ -39,7 +39,8 @@ $(document).ready(function(){
 	});
 
 	$('select#coin').change(function(){
-		console.log('select box changed');
+		$('input#investment-amount').val('');
+		$('span#new-price').text('');
 	});
 
 	$('input#investment-amount').keypress(function(){
