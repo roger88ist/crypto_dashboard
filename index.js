@@ -37,6 +37,14 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$('select#coin').change(function(){
+		console.log('select box changed');
+	});
+
+	$('input#investment-amount').keypress(function(){
+		console.log( "Handler for .keypress() called." );
+	});
 });
 
 function populateFields() {
