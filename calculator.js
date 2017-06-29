@@ -33,7 +33,7 @@ function calculateNewPrice() {
 			var newCoinPrice = round(totalDollars / totalCoins, 2);
 		}
 
-		console.log(newCoinPrice);
+		$('span#new-price').text(newCoinPrice);
 	}
 	
 

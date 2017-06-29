@@ -41,4 +41,10 @@ input#investment-amount {
 div.new-price {
 	height: 30px;
 	border-left: 3px solid black;
+	font-size: 20px;
+	text-align: center;
+}
+
+span#new-price {
+	display: inline-block;
 }
