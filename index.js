@@ -43,8 +43,8 @@ $(document).ready(function(){
 		$('span#new-price').text('');
 	});
 
-	$('input#investment-amount').keypress(function(){
-		console.log( "Handler for .keypress() called." );
+	$('input#investment-amount').keyup(function(){
+		calculateNewPrice();
 	});
 });
 
