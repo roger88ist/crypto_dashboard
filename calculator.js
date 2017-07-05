@@ -19,7 +19,7 @@ function calculateNewPrice() {
 			coin = false;
 	}
 	
-	if (coin) {
+	if (coin && investmentAmount) {
 		var priceLocation = 'span#' + coin.name + '-current-price';
 		var currentPrice = $(priceLocation).text().replace('$','');
 
@@ -34,6 +34,8 @@ function calculateNewPrice() {
 		}
 
 		$('span#new-price').text(newCoinPrice);
+	} else {
+		$('span#new-price').text("");
 	}
 	
 
