@@ -2,7 +2,7 @@ $(document).ready(function(){
 	populateFields();
 
 	$('#click').click(function(){
-		var url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,LTC,BTC,XRP&tsyms=USD';
+		var url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,LTC,BTC,XRP,BCH&tsyms=USD';
 		var usd = 'USD';
 		jQuery.ajax({
 			type: 'GET',
