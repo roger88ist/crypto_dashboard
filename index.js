@@ -14,12 +14,14 @@ $(document).ready(function(){
 					ltc: parseFloat(json['LTC'][usd]),
 					btc: parseFloat(json['BTC'][usd]),
 					eth: parseFloat(json['ETH'][usd]),
-					xrp: parseFloat(json['XRP'][usd])
+					xrp: parseFloat(json['XRP'][usd]),
+					bch: parseFloat(json['BCH'][usd])
 				}
 				$('#ltc-current-price').text('$' + currentPrices.ltc);
 				$('#btc-current-price').text('$' + currentPrices.btc);
 				$('#eth-current-price').text('$' + currentPrices.eth);
 				$('#xrp-current-price').text('$' + currentPrices.xrp);
+				$('#bch-current-price').text('$' + currentPrices.bch);
 
 				insertProfit(litecoinData(), currentPrices);
 				insertProfit(bitcoinData(), currentPrices);
