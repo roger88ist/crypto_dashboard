@@ -36,6 +36,13 @@ function rippleData() {
 	return investmentObject('xrp', investmentAmount, totalCoins, outOfPocket);
 }
 
+function bcashData() {
+	var investmentAmount = 0;
+	var totalCoins = 0;
+	var outOfPocket = 0.0;
+	return investmentObject('bch', investmentAmount, totalCoins, outOfPocket);	
+}
+
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
@@ -73,5 +80,5 @@ function portfolioTotal(currentPrices) {
 }
 
 function allCoins() {
-	return [litecoinData(), bitcoinData(), ethereumData(), rippleData()];
+	return [litecoinData(), bitcoinData(), ethereumData(), rippleData(), bcashData()];
 }
