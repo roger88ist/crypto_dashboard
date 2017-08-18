@@ -29,6 +29,7 @@ $(document).ready(function(){
 				insertProfit(bitcoinData(), currentPrices);
 				insertProfit(ethereumData(), currentPrices);
 				insertProfit(rippleData(), currentPrices);
+				insertProfit(apxData(), currentPrices);
 
 				insertTotalGains(totalGains(currentPrices));
 
