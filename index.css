@@ -5,7 +5,7 @@ body {
 
 .container {
 	width: 70%;
-	height: 680px;
+	height: 830px;
 	margin: auto;
 	margin-top: 70px;
 	background-color: white;
@@ -26,12 +26,13 @@ body {
 }
 
 .coin-area {
-	height: 20%;
+	height: 16.6%;
 	width: 100%;
 	border-bottom: 1px solid #DAE1E9;
 }
 
 .coin-area:last-child {
+	height: 17%;
 	border-top: 1px solid #DAE1E9;
 	border-bottom: none;
 }

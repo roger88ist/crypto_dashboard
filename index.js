@@ -2,7 +2,7 @@ $(document).ready(function(){
 	populateFields();
 
 	$('#click').click(function(){
-		var url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,LTC,BTC,XRP,BCH&tsyms=USD';
+		var url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,LTC,BTC,XRP,BCH,APX&tsyms=USD';
 		var usd = 'USD';
 		jQuery.ajax({
 			type: 'GET',
@@ -15,13 +15,15 @@ $(document).ready(function(){
 					btc: parseFloat(json['BTC'][usd]),
 					eth: parseFloat(json['ETH'][usd]),
 					xrp: parseFloat(json['XRP'][usd]),
-					bch: parseFloat(json['BCH'][usd])
+					bch: parseFloat(json['BCH'][usd]),
+					apx: parseFloat(json['APX'][usd])
 				}
 				$('#ltc-current-price').text('$' + currentPrices.ltc);
 				$('#btc-current-price').text('$' + currentPrices.btc);
 				$('#eth-current-price').text('$' + currentPrices.eth);
 				$('#xrp-current-price').text('$' + currentPrices.xrp);
 				$('#bch-current-price').text('$' + currentPrices.bch);
+				$('#apx-current-price').text('$' + currentPrices.apx);
 
 				insertProfit(litecoinData(), currentPrices);
 				insertProfit(bitcoinData(), currentPrices);
